@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import { useRecoilState } from 'recoil'; 
 import {inputBase64} from './recoil/Base64'
+import './style.css'
+import { Button } from '@mui/material'
 
 export default function ImgUpload() {
 
@@ -29,14 +31,17 @@ export default function ImgUpload() {
 
     return (
       <div>
-        <input
-          type="file"
-          name="image"
-          id="file"
-          accept=".jpg, .jpeg, .png"
-          onChange={e => onChange(e)}
-        />
-
+        <Button variant="outlined" color= 'success'>
+        <label>사진 찾기
+          <input
+            type="file"
+            name="image"
+            id="file"
+            accept=".jpg, .jpeg, .png"
+            onChange={e => onChange(e)}
+          />
+        </label>
+        </Button>
         {/*<p>base64 string: {base64Data}</p>*/}
         <br />
         {/* base64Data != null && <img src={`data:image;base64,${base64Data}`}/> */}

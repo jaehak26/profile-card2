@@ -82,6 +82,7 @@ export default function Profile() {
             baseClassName="far"
             className="fa-sticky-note"
             onClick={() => onClickDownload(ref)}
+            sx={{cursor:"pointer"}}
           />
           <article className="profile">
             <br />
