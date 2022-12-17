@@ -41,11 +41,20 @@ export default function ProgramInfo(){
             baseClassName="far"
             className="fa-sticky-note"
             sx = {{float: 'left', marginRight: '5px'}}
-            /> {" : 프로필 카드를 로컬에 다운로드 할 수 있습니다."}
+            /> {" : 클릭 시 프로필 카드를 로컬에 다운로드 할 수 있습니다."}
             <br></br>
             <br></br>
             <div>
                 파일 선택 버튼 - 클릭 시 로컬의 이미지를 찾아 프로필 카드의 사진에 넣어줍니다.
+            </div>
+            <br/>
+            <div>
+                DB에 저장 - 아래의 폼에 내용을 입력하고 클릭하면 DB에 해당 내용들이 저장됩니다.<br/>
+                다만 userId는 반드시 입력해야 합니다. 사진은 프로필 사진에 올려져 있는 사진이 저장됩니다.
+                <br/><br/>
+                DB에서 가져오기 - userId를 입력하면 그에 해당되는 데이터를 가져와 프로필 사진으로 만듭니다.
+                <br/><br/>
+                DB데이터 삭제 - userId를 입력하면 그에 해당되는 데이터를 DB에서 삭제합니다.
             </div>
         </DialogContent>    
         <DialogActions>

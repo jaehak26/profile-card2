@@ -4,7 +4,8 @@ export const ICON_CSS = {
   color: '#555',
   fontSize: '15px',
   textShadow: '2px 2px 2px #ddd',
-  marginTop: "px"
+  marginTop: "px",
+
 };
 
 export const PHONE_ICON_CSS = {
