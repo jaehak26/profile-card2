@@ -12,7 +12,11 @@ export default function DeleteForm() {
     <>
       <Button variant="outlined"
       onClick={async (e)=>{
-        await onCLickDeleteForm(userCoil);
+        if(isDumpedState(userCoil.userId)){
+          alert("userId를 입력해주세요.")
+        }else{
+          await onCLickDeleteForm(userCoil);
+        }       
       }}>DB데이터 삭제</Button>
     </>
   );

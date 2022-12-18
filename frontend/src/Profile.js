@@ -1,10 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './style.css';
 
-import Icon from '@mui/material/Icon';
-import { loadCSS } from 'fg-loadcss';
-import { FONTAWSOME_LINK } from './Link';
-
 import { useRecoilState } from 'recoil';
 import { inputBase64 } from './recoil/Base64';
 import { userInfo } from './recoil/UserInfo';
@@ -12,25 +8,18 @@ import { onClickDownload } from './Button/OnClick';
 
 import {isDumpedState} from './isDumpedState'
 
+import MenuIcon  from './Icon/bars-solid.svg'
+import EnvelopeIcon from './Icon/envelope-solid.svg'
+import NoteIcon from './Icon/note-sticky-regular.svg'
+import PhoneIcon from './Icon/phone-solid.svg'
 
-import { ICON_CSS} from './style';
+
+import { ICON_CSS, PHONE_ICON_CSS} from './style';
 
 export default function Profile() {
   const [baseDataCoil, setBaseDataCoil] = useRecoilState(inputBase64);
   const [userCoil, setuserCoil] = useRecoilState(userInfo);
   const ref = useRef();
-
-  useEffect(() => {
-    const node = loadCSS(
-      FONTAWSOME_LINK,
-      // Inject before JSS
-      document.querySelector('#font-awesome-css') || document.head.firstChild
-    );
-
-    return () => {
-      node.parentNode.removeChild(node);
-    };
-  }, []);
 
 
   const UserNameComp = () =>{
@@ -77,12 +66,11 @@ export default function Profile() {
     <div>
       <div ref={ref}>
         <section>
-          <Icon baseClassName="fas" className="fa-bars" />
-          <Icon
-            baseClassName="far"
+          <img src={MenuIcon} className="fa-bars" />
+          <img src={NoteIcon}
             className="fa-sticky-note"
             onClick={() => onClickDownload(ref)}
-            sx={{cursor:"pointer"}}
+            style={{cursor:"pointer"}}
           />
           <article className="profile">
             <br />
@@ -98,18 +86,16 @@ export default function Profile() {
     
             <ul className="contact">
               <li>
-                <Icon
-                  baseClassName="fas"
+                <img src={PhoneIcon}
                   className="fa-phone"
-                  sx={{ ...ICON_CSS }}
+                  style={{ ...ICON_CSS,...PHONE_ICON_CSS }}
                 />
                 <UserPhoneComp/>
               </li>
               <li>
-                <Icon
-                  baseClassName="fas"
+                <img src={EnvelopeIcon}
                   className="fa-envelope"
-                  sx={ICON_CSS}
+                  style={ICON_CSS}
                 />
                 <UserEmailComp/>
               </li>

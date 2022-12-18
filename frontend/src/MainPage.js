@@ -16,13 +16,13 @@ export default function MainPage() {
     <div>
       <Profile></Profile>
       <Box style={{textAlign:'left'}}>
-      <ProgramInfo/>
-      <InputUserInfo></InputUserInfo>
-      <ImgUpload></ImgUpload>
-      <UploadFormBtn></UploadFormBtn>
-      <GetForm></GetForm>
-      <DeleteForm></DeleteForm>
-      <div style={{margin:"30px"}}></div>
+        <ProgramInfo/>
+        <InputUserInfo></InputUserInfo>
+        <ImgUpload></ImgUpload>
+        <UploadFormBtn></UploadFormBtn>
+        <GetForm></GetForm>
+        <DeleteForm></DeleteForm>
+        <div style={{margin:"30px"}}></div>
       </Box>
     </div>
   );

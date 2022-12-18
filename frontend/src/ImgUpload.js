@@ -37,7 +37,7 @@ export default function ImgUpload() {
             type="file"
             name="image"
             id="file"
-            accept=".jpg, .jpeg, .png"
+            accept="image/*"
             onChange={e => onChange(e)}
           />
         </label>
