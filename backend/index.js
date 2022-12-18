@@ -46,11 +46,13 @@ app.post('/api/profile/insert',
   let userId = req.body.userId;
   let userName = req.body.userName;
   let moreInfo = req.body.moreInfo;
-  let userPhone = req.body.gender;
-  let userEmail = req.body.job;
+  let userPhone = req.body.userPhone;
+  let userEmail = req.body.userEmail;
+  let userLink = req.body.userLink
   let profileBlob =  req.body.profileBlob;
-  let sql = "INSERT INTO profile_info VALUES (?,?,?,?,?,?)"
-  let params = [userId, userName, moreInfo, userPhone, userEmail ,profileBlob];
+
+  let sql = "INSERT INTO profile_info VALUES (?,?,?,?,?,?,?)"
+  let params = [userId, userName, moreInfo, userPhone, userEmail,userLink ,profileBlob];
   connection.query(sql,params,
     (err,rows,fields) => {
         if(err){
@@ -69,15 +71,16 @@ app.post('/api/profile/update',
     (req,res)=>{
         //console.log(req.body)
         let addSql = "UPDATE profile_info SET "+
-        "userName = ?, moreInfo = ?, userPhone = ?, userEmail = ?, profileBlob = ? "
+        "userName = ?, moreInfo = ?, userPhone = ?, userEmail = ?, userLink=?, profileBlob = ? "
         +"WHERE userId = ? "
         let userId = req.body.userId;
         let userName = req.body.userName;
         let moreInfo = req.body.moreInfo;
-        let userPhone = req.body.gender;
-        let userEmail = req.body.job;
+        let userPhone = req.body.userPhone;
+        let userEmail = req.body.userEmail;
+        let userLink = req.body.userLink
         let profileBlob =  req.body.profileBlob;
-        let params = [userName, moreInfo, userPhone, userEmail ,profileBlob, userId];
+        let params = [userName, moreInfo, userPhone, userEmail, userLink ,profileBlob, userId];
         connection.query(addSql, params,
             (err, rows, fields) =>{
                 

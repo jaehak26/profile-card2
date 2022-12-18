@@ -20,6 +20,7 @@ export const onClickSendServer = async (event, formdata, base64) =>{
   urlencoded.append("moreInfo",formdata.moreInfo)
   urlencoded.append("userPhone", formdata.userPhone)
   urlencoded.append("userEmail", formdata.userEmail)
+  urlencoded.append("userLink", formdata.userLink)
   urlencoded.append("profileBlob", base64)
 
   let requestOptions = {
