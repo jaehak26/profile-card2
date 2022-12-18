@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { useRecoilState } from 'recoil';
 import { userInfo } from '../recoil/UserInfo';
 import {onCLickDeleteForm} from './OnClick'
+import {isDumpedState} from '../isDumpedState'
 
 export default function DeleteForm() {
   const [userCoil, setUserCoil] = useRecoilState(userInfo);

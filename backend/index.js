@@ -6,8 +6,8 @@ const cors = require("cors");
 const port = process.env.PORT || 5000
 const {Blob} = require("buffer")
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(express.urlencoded({extended: true, limit: "15mb"}));
+app.use(express.json({limit: "15mb"}));
 
 //database.json 읽기
 const data = fs.readFileSync("./database.json");
@@ -106,7 +106,7 @@ app.post('/api/profile/search',
         res.send(err)
     }
     if(rows == ""){
-        res.send([{empty: "true"}])
+        res.send({empty: "true"})
     }    
     else{
         let result = {...rows[0], empty: "false"}
